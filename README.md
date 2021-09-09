@@ -3,7 +3,7 @@
 </h1>
 <p align="center">
   <img src=".github/zap-icon.png" alt="" width="14px" align="center">
-  Plataforma de gerenciamento de tarefas pessoais
+  Personal Task Management Platform
 </p>
 
 <p align="center">
@@ -18,10 +18,10 @@ https://user-images.githubusercontent.com/58959382/122308661-2cd53380-cee3-11eb-
 
 ## :rocket: Features
 
-- Registro de contas, login e logout do usuário na plataforma
-- Criação, edição e remoção de tarefas do usuário
-- Suporte para adicionar prioridades às tarefas (Alta e Baixa)
-- Visualização de tarefas de forma ordenada de acordo com a prioridade ou nome da tarefa
+- Account registration, user login and logout on the platform
+- Creating, editing and removing user tasks
+- Support for adding priorities to tasks (High and Low)
+- View tasks in an orderly manner according to priority or task name
 
 ## :gear: Tecnologias
 
@@ -30,15 +30,15 @@ https://user-images.githubusercontent.com/58959382/122308661-2cd53380-cee3-11eb-
 
 > Deploy feito na [Vercel](https://vercel.com/)
 
-## :computer: Primeiros passos
+## :computer: Getting Started
 
-### Acessando a aplicação
+### Accessing the application
 
-A aplicação está disponível no link a seguir: <a href="https://taskboardapp.vercel.app">taskboardapp.vercel.app</a>
+The application is available at the following link: <a href="https://taskboardapp.vercel.app">taskboardapp.vercel.app</a>
 
-### Clonando o projeto
+### Cloning the project
 
-Para clonar e executar esta aplicação, é preciso ter [Git](https://git-scm.com), [Node.js](https://nodejs.org/en) e [Yarn](https://yarnpkg.com) instalados. Depois, da sua linha de comando:
+To clone and run this application, you need to have [Git](https://git-scm.com), [Node.js](https://nodejs.org/en) and [Yarn](https:// yarnpkg.com) installed. Then, from your command line:
 
 ```bash
 $ git clone https://github.com/diego-aquino/taskboard-web.git
@@ -49,23 +49,23 @@ $ cd taskboard-web
 
 - `yarn dev`
 
-  Inicia o servidor de desenvolvimento, que ficará disponível em `http://localhost:3000`. Mudanças no código fonte são atualizadas em tempo real.
+   Starts the development server, which will be available at `http://localhost:3000`. Source code changes are updated in real time.
 
 - `yarn build`
 
-  Gera a build do projeto.
+   Generates the project build.
 
 - `yarn start`
 
-  Inicia o servidor do projeto a partir da build. Para executar esse comando, é necessário ter gerado uma build antes, usando `yarn build`.
+   Starts the project server from build. To run this command, you must have generated a build before using `yarn build`.
 
-## :newspaper_roll: Licença
+  ## :newspaper_roll: License
 
-Este projeto está sob a licença GLPv3. Para mais informações, acesse [LICENSE](./LICENSE).
+  This project is under the GLPv3 license. For more information, go to [LICENSE](./LICENSE).
 
-## :technologist: Devs
+  ## :technologist: Devs
 
-- <p>Diego Aquino&nbsp;
+  - <p>Diego Aquino&nbsp;
     <a href="http://linkedin.com/in/diego-aquino">
       <img
         alt="LinkedIn"
