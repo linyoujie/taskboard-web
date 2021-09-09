@@ -84,33 +84,33 @@ $ cd taskboard-web
 
 - <p>Murilo Castro&nbsp;
     <a href="https://www.linkedin.com/in/murilo-castro-a61a9019b/">
-      <img
-        alt="LinkedIn"
-        src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=2867B2&style=flat-square&logo=linkedin"
-        align="center"
-      />
-    </a>
-    <a href="https://github.com/Murilo-Gruppi">
-      <img
-        alt="GitHub"
-        src="https://img.shields.io/static/v1?label=&message=GitHub&color=24292e&style=flat-square&logo=github"
-        align="center"
-      />
-    </a>
+    <img
+      alt="LinkedIn"
+      src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=2867B2&style=flat-square&logo=linkedin"
+      align="center"
+    />
+  </a>
+  <a href="https://github.com/Murilo-Gruppi">
+    <img
+      alt="GitHub"
+      src="https://img.shields.io/static/v1?label=&message=GitHub&color=24292e&style=flat-square&logo=github"
+      align="center"
+    />    
+  </a>
   </p>
 - <p>Vinícius Lins&nbsp;&nbsp;
     <a href="https://www.linkedin.com/in/vin%C3%ADcius-amaral-759b76205/">
-      <img
-        alt="LinkedIn"
-        src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=2867B2&style=flat-square&logo=linkedin"
-        align="center"
-      />
-    </a>
-    <a href="https://github.com/viniciuslins256">
-      <img
-        alt="GitHub"
-        src="https://img.shields.io/static/v1?label=&message=GitHub&color=24292e&style=flat-square&logo=github"
-        align="center"
-      />
-    </a>
+    <img
+      alt="LinkedIn"
+      src="https://img.shields.io/static/v1?label=&message=LinkedIn&color=2867B2&style=flat-square&logo=linkedin"
+      align="center"
+    />
+  </a>
+  <a href="https://github.com/viniciuslins256">
+    <img
+      alt="GitHub"
+      src="https://img.shields.io/static/v1?label=&message=GitHub&color=24292e&style=flat-square&logo=github"
+      align="center"
+    />
+  </a>
   </p>

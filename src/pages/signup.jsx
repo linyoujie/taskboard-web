@@ -67,7 +67,7 @@ const SignUpPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Registrar-se | Taskboard</title>
+        <title>Register | Taskboard</title>{' '}
       </Head>
 
       <section className={styles.decorativeSectionContainer}>
@@ -78,8 +78,8 @@ const SignUpPage = () => {
       </section>
 
       <section className={styles.signUpSection}>
-        <h1>Registre-se</h1>
-        <p>E gerencie as suas tarefas com eficiência!</p>
+        <h1>Register</h1>
+        <p>And manage your tasks efficiently!</p>
 
         <SignUpForm
           ref={signUpFormRef}
@@ -88,8 +88,8 @@ const SignUpPage = () => {
         />
 
         <div className={styles.alreadyRegisteredContainer}>
-          <span>Já tem uma conta?</span>
-          <Link href="/login">Faça login</Link>
+          <span>Already have an account?</span>
+          <Link href="/login"> Login</Link>
         </div>
       </section>
     </div>

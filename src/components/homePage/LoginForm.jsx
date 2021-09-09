@@ -62,14 +62,14 @@ const LoginForm = ({ onValidSubmit, loading: isLoading }, ref) => {
         type="email"
         label="Email"
         validate={validate.requiredEmailField}
-        placeholder="nome@dominio.com"
+        placeholder="name@host.com"
         required
       />
       <Input
         ref={passwordInputRef}
         name="password"
         type="password"
-        label="Senha"
+        label="Password"
         placeholder="********"
         minLength={8}
         validate={validatePassword}

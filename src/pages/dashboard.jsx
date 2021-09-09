@@ -157,7 +157,7 @@ const DashboardPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Dashboard | Tarefas</title>
+        <title>Dashboard | Tasks</title>
       </Head>
 
       <TaskModalForm
@@ -188,7 +188,7 @@ const DashboardPage = () => {
         </div>
         <div className={styles.sidebarMenu}>
           <button type="button" onClick={openTaskCreationForm}>
-            <PlusIcon /> Nova Tarefa
+            <PlusIcon /> New Task
           </button>
           <button type="button" onClick={logoutAccount}>
             <LogoutIcon /> Logout
@@ -207,21 +207,21 @@ const DashboardPage = () => {
               >
                 <MenuIcon />
               </button>
-              <h1>Tarefas</h1>
+              <h1>Tasks</h1>
             </div>
             <p>
-              Marque suas tarefas como concluídas, adicione novas tarefas ou
-              edite as já existentes.
+              Mark your tasks as completed, add new tasks or edit the existing
+              ones.
             </p>
           </div>
           <div className={styles.preferences}>
             <div className={styles.sortingCriteria}>
-              <span>Ordenar</span>
+              <span>Order</span>
               <SwitchButton
                 leftName="priority"
-                leftValue="Prioridade"
+                leftValue="Priority"
                 rightName="name"
-                rightValue="Nome"
+                rightValue="Name"
                 onChange={updateSortingCriteria}
               />
             </div>
@@ -231,10 +231,10 @@ const DashboardPage = () => {
                 onChange={(event) => updateSortingOrder(event.target.value)}
               >
                 <option value="desc">
-                  {sortingCriteria === 'priority' ? 'Alta' : 'Alfabética ↓'}
+                  {sortingCriteria === 'priority' ? 'High' : 'Alphabetical ↓'}
                 </option>
                 <option value="asc">
-                  {sortingCriteria === 'priority' ? 'Baixa' : 'Alfabética ↑'}
+                  {sortingCriteria === 'priority' ? 'Low' : 'Alphabetical ↑'}
                 </option>
               </select>
             </div>
@@ -263,7 +263,7 @@ const DashboardPage = () => {
 
             {tasks.length === 0 && (
               <span className={styles.noTasksMessage}>
-                Sem tarefas no momento :)
+                No tasks at the moment :)
               </span>
             )}
           </div>

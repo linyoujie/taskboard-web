@@ -51,22 +51,22 @@ const TaskForm = ({
             title="Remover tarefa"
           >
             <TrashIcon />
-            Remover tarefa
+            Remove Task
           </button>
         )}
       </div>
 
       <div className={styles.prioritySelectContainer}>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label htmlFor="taskPriority">Prioridade</label>
+        <label htmlFor="taskPriority">Priority</label>
         <select
           ref={taskPrioritySelectRef}
           id="taskPriority"
           name="taskPriority"
           defaultValue={initialValues.priority}
         >
-          <option value="high">Alta</option>
-          <option value="low">Baixa</option>
+          <option value="high">High</option>
+          <option value="low">Low</option>
         </select>
       </div>
 

@@ -62,7 +62,7 @@ const LoginPage = () => {
 
       <section className={styles.loginSection}>
         <h1>Login</h1>
-        <p>Seja bem vindo de volta!</p>
+        <p>Welcome back!</p>
 
         <LoginForm
           ref={loginFormRef}
@@ -71,8 +71,8 @@ const LoginPage = () => {
         />
 
         <div className={styles.center}>
-          <span>Não tem uma conta?</span>
-          <Link href="/signup">Registre-se</Link>
+          <span>Dont have an account?</span>
+          <Link href="/signup">Register</Link>
         </div>
       </section>
 

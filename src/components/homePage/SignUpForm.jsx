@@ -46,7 +46,7 @@ const SignUpForm = ({ onValidSubmit, loading: isLoading }, ref) => {
     const passwordsDidMatch = password === confirmedPassword;
 
     if (!passwordsDidMatch) {
-      throw new ValidationError('As senhas não conferem');
+      throw new ValidationError('Passwords do not match!');
     }
   }, []);
 
@@ -92,7 +92,7 @@ const SignUpForm = ({ onValidSubmit, loading: isLoading }, ref) => {
           ref={firstNameInputRef}
           type="text"
           name="firstName"
-          label="Nome"
+          label="First Name"
           validate={validate.requiredTextField}
           required
         />
@@ -100,7 +100,7 @@ const SignUpForm = ({ onValidSubmit, loading: isLoading }, ref) => {
           ref={lastNameInputRef}
           type="text"
           name="lastName"
-          label="Sobrenome"
+          label="Last Name"
           validate={validate.requiredTextField}
           required
         />
@@ -110,7 +110,7 @@ const SignUpForm = ({ onValidSubmit, loading: isLoading }, ref) => {
         type="email"
         name="email"
         label="Email"
-        placeholder="nome@dominio.com"
+        placeholder="name@host.com"
         validate={validate.requiredEmailField}
         required
       />
@@ -119,7 +119,7 @@ const SignUpForm = ({ onValidSubmit, loading: isLoading }, ref) => {
           ref={passwordInputRef}
           type="password"
           name="password"
-          label="Senha"
+          label="Password"
           placeholder="********"
           minLength={8}
           validate={validatePassword}
@@ -129,7 +129,7 @@ const SignUpForm = ({ onValidSubmit, loading: isLoading }, ref) => {
           ref={confirmPasswordInputRef}
           type="password"
           name="confirmPassword"
-          label="Confirmar senha"
+          label="Confirm Password"
           placeholder="********"
           minLength={8}
           validate={validateConfirmedPassword}

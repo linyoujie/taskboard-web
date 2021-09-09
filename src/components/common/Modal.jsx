@@ -35,7 +35,7 @@ const Modal = ({
         type="button"
         onClick={onClose}
       >
-        Fechar
+        Close
       </button>
     </div>
   );

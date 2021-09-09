@@ -23,11 +23,11 @@ export function getErrorType(errorResponse) {
 export function generateFeedbackMessage(errorType) {
   switch (errorType) {
     case errorTypes.EMAIL_ALREADY_IN_USE:
-      return 'Email já em uso';
+      return 'Email already in use';
     case errorTypes.EMAIL_AND_PASSWORD_DO_NOT_MATCH:
-      return 'Email e/ou senha não conferem';
+      return 'Email and password do not match';
     case errorTypes.UNKNOWN_ERROR:
-      return 'Oops! Ocorreu um erro';
+      return 'Oops! Unkown error';
     default:
       return null;
   }

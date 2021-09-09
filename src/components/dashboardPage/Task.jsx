@@ -52,7 +52,7 @@ const Task = ({
         >
           {isChecked && <CheckMarkIcon />}
         </div>
-        {isChecked ? 'Marcar como não completa' : 'Marcar como completa'}
+        {isChecked ? 'Mark as not complete' : 'Mark as complete'}
       </button>
       <span className={styles.name}>{name}</span>
       <button
@@ -60,7 +60,7 @@ const Task = ({
         type="button"
         onClick={handleTaskClick}
       >
-        Abrir tarefa
+        Open Task
       </button>
     </div>
   );

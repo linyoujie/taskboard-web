@@ -1,9 +1,9 @@
 import * as yup from 'yup';
 
 const validationMessages = {
-  requiredField: 'Este é um campo obrigatório',
-  invalidEmail: 'Forneça um email válido',
-  passwordTooShort: 'A senha deve ter no mínimo 8 caracteres',
+  requiredField: 'This is a required field.',
+  invalidEmail: 'Please provide a valid email address',
+  passwordTooShort: 'Password must have at least 8 characters',
 };
 
 export async function requiredTextField(textValue) {

@@ -21,9 +21,7 @@ const TaskModalForm = ({
           onValidSubmit={status === 'create' ? onCreateTask : onEditTask}
           showRemoveButton={status === 'edit'}
           onRemoveButtonClick={onRemoveTask}
-          submitButtonText={
-            status === 'create' ? 'Criar tarefa' : 'Editar tarefa'
-          }
+          submitButtonText={status === 'create' ? 'Create Task' : 'Edit Task'}
           loading={isLoading}
         />
       )}
