@@ -12,7 +12,12 @@ import { localStorageKeys, saveToLocalStorage } from '~/utils/local';
 import * as network from '~/utils/network';
 
 const LoginPage = () => {
+  const serverUrl = 'http://10.200.29.43:3000/dashboard';
   const router = useRouter();
+  const larkLoginUrl =
+    'https://open.feishu.cn/open-apis/authen/v1/index?redirect_uri=' +
+    serverUrl +
+    '&app_id=cli_a1b12f9b05f89013';
 
   const { setTokens } = useAuthContext();
 
@@ -73,6 +78,12 @@ const LoginPage = () => {
         <div className={styles.center}>
           <span>Dont have an account?</span>
           <Link href="/signup">Register</Link>
+        </div>
+
+        <div className={styles.center}>
+          <span>Login with Lark?</span>
+
+          <Link href={larkLoginUrl}>Lark</Link>
         </div>
       </section>
 
