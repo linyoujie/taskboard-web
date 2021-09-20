@@ -27,10 +27,15 @@ const LoginPage = () => {
   const loginAccount = useCallback(
     async (accountData) => {
       const responseData = await accountsServices.login(accountData);
+
       const { accessToken, refreshToken } = responseData;
       setTokens({ accessToken, refreshToken });
-
       saveToLocalStorage(localStorageKeys.REFRESH_TOKEN, refreshToken);
+
+      // const { token } = responseData;
+      // setTokens({ token, token });
+
+      // saveToLocalStorage(localStorageKeys.REFRESH_TOKEN, token);
     },
     [setTokens],
   );

@@ -23,7 +23,12 @@ export async function logout(accessToken) {
 }
 
 export async function token(refreshToken) {
-  const tokenResponse = await api.post('/accounts/token', { refreshToken });
+  // console.log("refreshToken?:",refreshToken)
+  const tokenResponse = await api.post(
+    '/accounts/token',
+    {},
+    { headers: { Authorization: `Bearer ${refreshToken}` } },
+  );
   const { accessToken } = tokenResponse.data;
 
   return accessToken;

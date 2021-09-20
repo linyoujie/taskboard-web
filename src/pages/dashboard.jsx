@@ -43,6 +43,7 @@ const DashboardPage = () => {
   const [initialTaskFormValues, setInitialTaskFormValues] = useState({
     name: '',
     priority: 'high',
+    // priority: '5',
   });
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -81,7 +82,7 @@ const DashboardPage = () => {
 
   const openTaskCreationForm = useCallback(() => {
     setTaskModalFormStatus('create');
-    setInitialTaskFormValues({ name: '', priority: 'high' });
+    setInitialTaskFormValues({ name: '', priority: 'High' });
   }, []);
 
   const openTaskEditingForm = useCallback((taskData) => {
@@ -140,7 +141,15 @@ const DashboardPage = () => {
   );
 
   useEffect(() => {
+    console.log(
+      'isLoadingAuth:',
+      isLoadingAuth,
+      ', isAuthenticated:',
+      isAuthenticated,
+    );
+
     const shouldRedirect = !isLoadingAuth && !isAuthenticated;
+
     if (shouldRedirect) {
       router.replace('/login');
     }
@@ -231,9 +240,11 @@ const DashboardPage = () => {
                 onChange={(event) => updateSortingOrder(event.target.value)}
               >
                 <option value="desc">
+                  {/* {sortingCriteria === 'priority' ? '9' : 'Alphabetical ↓'} */}
                   {sortingCriteria === 'priority' ? 'High' : 'Alphabetical ↓'}
                 </option>
                 <option value="asc">
+                  {/* {sortingCriteria === 'priority' ? '0' : 'Alphabetical ↑'} */}
                   {sortingCriteria === 'priority' ? 'Low' : 'Alphabetical ↑'}
                 </option>
               </select>
