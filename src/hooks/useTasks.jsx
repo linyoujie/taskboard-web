@@ -32,6 +32,8 @@ function useTasks() {
   const { isAuthenticated, makeAuthenticatedRequest } = useAuth();
 
   const [tasks, setTasks] = useState([]);
+  const [filtedTasks, setFiltedTasks] = useState([]);
+
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -56,6 +58,21 @@ function useTasks() {
         : sortTasksByName(currentTasks, ascending),
     );
   }, []);
+
+  // const filtTasks = useCallback((tasks, criteria) => {
+  //   if (criteria === "uncompleted")
+  //     setFiltedTasks(
+  //       tasks.filter((task) => task.isCompleted === false),
+  //     )
+  //   else if (criteria === "completed") {
+  //     setFiltedTasks([{ "id": 2, "name": "test321", "des": "test des", "sub": "{1,2,3}", "owner": 1, "bytetaskId": 0, "priority": "low", "isCompleted": 1, "createdAt": "2021-09-21T03:32:23.000Z", "updatedAt": null, "completeAt": null }, { "id": 1, "name": "test321", "des": "test des", "sub": "{1,2,3}", "owner": 1, "bytetaskId": 0, "priority": "low", "isCompleted": 1, "createdAt": "2021-09-21T03:32:23.000Z", "updatedAt": null, "completeAt": null }])
+  //   }
+  //   else {
+  //     setFiltedTasks([{ "id": 1, "name": "test321", "des": "test des", "sub": "{1,2,3}", "owner": 1, "bytetaskId": 0, "priority": "low", "isCompleted": 1, "createdAt": "2021-09-21T03:32:23.000Z", "updatedAt": null, "completeAt": null },]
+  //     )
+  //   }
+
+  // }, []);
 
   const insertSortedTask = useCallback((newTask, criteria, order) => {
     const ascending = order === 'asc';
@@ -126,7 +143,16 @@ function useTasks() {
     [isAuthenticated, makeAuthenticatedRequest],
   );
 
-  return { tasks, isLoading, sortTasks, createTask, editTask, removeTask };
+  return {
+    tasks,
+    filtedTasks,
+    isLoading,
+    sortTasks,
+    // filtTasks,
+    createTask,
+    editTask,
+    removeTask,
+  };
 }
 
 export default useTasks;

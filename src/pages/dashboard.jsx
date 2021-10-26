@@ -10,7 +10,7 @@ import {
   MenuIcon,
   ArrowBack,
 } from '~/assets';
-import { SwitchButton } from '~/components/common';
+import { SwitchButton, ThreeButton } from '~/components/common';
 import { Task, TaskModalForm } from '~/components/dashboardPage';
 import { useAccount } from '~/contexts/AccountContext';
 import { useAuth } from '~/contexts/AuthContext';
@@ -25,8 +25,10 @@ const DashboardPage = () => {
   const { accountData } = useAccount();
   const {
     tasks,
+    filtedTasks,
     isLoading: isLoadingTasks,
     sortTasks,
+    filtTasks,
     createTask,
     editTask,
     removeTask,
@@ -36,6 +38,7 @@ const DashboardPage = () => {
 
   const [sortingCriteria, setSortingCriteria] = useState('priority');
   const [sortingOrder, setSortingOrder] = useState('desc');
+  const [filter, setFilter] = useState('uncompleted');
 
   const [tasksAreSorted, setTasksAreSorted] = useState(false);
 
@@ -60,7 +63,18 @@ const DashboardPage = () => {
 
     sortTasks(sortingCriteria, sortingOrder);
     setTasksAreSorted(true);
-  }, [tasks, tasksAreSorted, sortingCriteria, sortingOrder, sortTasks]);
+
+    filtTasks(tasks, filter);
+  }, [
+    tasks,
+    filter,
+    filtedTasks,
+    tasksAreSorted,
+    sortingCriteria,
+    sortingOrder,
+    sortTasks,
+    filtTasks,
+  ]);
 
   const updateSortingCriteria = useCallback(
     (newSortingCriteria) => {
@@ -79,6 +93,16 @@ const DashboardPage = () => {
     },
     [sortTasks, sortingCriteria, sortingOrder],
   );
+
+  // const updateFilter = useCallback(
+  //   (newfilterCriteria) => {
+  //     if (newfilterCriteria === filter) return;
+  //     setFilter(newfilterCriteria);
+  //     filtTasks(tasks. newfilterCriteria);
+  //   },[],
+  //   //Need TO fix
+  //   // [filtTasks, filter],
+  // );
 
   const openTaskCreationForm = useCallback(() => {
     setTaskModalFormStatus('create');
@@ -106,7 +130,8 @@ const DashboardPage = () => {
   );
 
   const logoutAccount = async () => {
-    await logoutUser();
+    // TODO: remove cridential from server
+    // await logoutUser();
 
     removeTokenFromLocalStorage(localStorageKeys.REFRESH_TOKEN);
     router.push('/login');
@@ -196,9 +221,9 @@ const DashboardPage = () => {
           <h1>{userFullName}</h1>
         </div>
         <div className={styles.sidebarMenu}>
-          <button type="button" onClick={openTaskCreationForm}>
+          {/* <button type="button" onClick={openTaskCreationForm}>
             <PlusIcon /> New Task
-          </button>
+          </button> */}
           <button type="button" onClick={logoutAccount}>
             <LogoutIcon /> Logout
           </button>
@@ -217,6 +242,9 @@ const DashboardPage = () => {
                 <MenuIcon />
               </button>
               <h1>Tasks</h1>
+              <button type="button" onClick={openTaskCreationForm}>
+                <PlusIcon /> New Task
+              </button>
             </div>
             <p>
               Mark your tasks as completed, add new tasks or edit the existing
@@ -224,6 +252,19 @@ const DashboardPage = () => {
             </p>
           </div>
           <div className={styles.preferences}>
+            <div className={styles.sortingCriteria}>
+              <span>Filter</span>
+              <ThreeButton
+                leftName="all"
+                leftValue="All"
+                midName="Uncompleted"
+                midValue="uncompleted"
+                rightName="completed"
+                rightValue="Completed"
+                // onChange={updateFilter}
+              />
+            </div>
+
             <div className={styles.sortingCriteria}>
               <span>Order</span>
               <SwitchButton
@@ -256,11 +297,11 @@ const DashboardPage = () => {
           <div
             className={clsx(
               styles.taskList,
-              tasks.length === 0 && styles.noTasks,
+              filtedTasks.length === 0 && styles.noTasks,
             )}
           >
             {tasksAreSorted &&
-              tasks.map((task) => (
+              filtedTasks.map((task) => (
                 <Task
                   key={task.id}
                   id={task.id}
@@ -272,7 +313,7 @@ const DashboardPage = () => {
                 />
               ))}
 
-            {tasks.length === 0 && (
+            {filtedTasks.length === 0 && (
               <span className={styles.noTasksMessage}>
                 No tasks at the moment :)
               </span>
